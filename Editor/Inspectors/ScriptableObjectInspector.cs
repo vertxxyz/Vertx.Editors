@@ -52,7 +52,7 @@ namespace Vertx.Editors.Editor
 			Rect titleRect = position;
 			titleRect.xMin += 40;
 			titleRect.xMax -= 55;
-			titleRect.yMax -= 25;
+			titleRect.yMax -= 23;
 			if (e.isMouse && e.type == EventType.MouseDown && titleRect.Contains(e.mousePosition))
 			{
 				DragAndDrop.objectReferences = targets;
@@ -60,7 +60,7 @@ namespace Vertx.Editors.Editor
 				DragAndDrop.StartDrag("Drag SO");
 			}
 			
-			position.y = position.yMax - 21;
+			position.y = position.yMax - 26;
 			position.height = 15;
 			position.xMin += 46;
 			position.xMax -= 55;
