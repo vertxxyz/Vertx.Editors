@@ -1,0 +1,13 @@
+# Changelog
+All notable changes to this package will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [1.1.0] - 2020-10-03
+ - Update to stay inline with Vertx.Utilities changes.
+ - StyleExtensions has been renamed to StyleUtils to match other Utility/Extension classes across these packages.
+ - Added Select and Search to MonoScript. Added a prefab search window that is used by searches with MonoBehaviour scripts.
+
+## [1.0.0]
+ - Initial release.

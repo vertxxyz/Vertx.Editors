@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 namespace Vertx.Editors.Editor
 {
-	public static class StyleExtensions
+	public static class StyleUtils
 	{
 		public static StyleSheet GetStyleSheet(string name)
 		{
