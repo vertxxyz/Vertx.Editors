@@ -42,6 +42,9 @@ namespace Vertx.Editors.Editor
 
 		private void OnEnable()
 		{
+			if (SearchingType == null && searchingTypeString != null)
+				SearchingType = Type.GetType(searchingTypeString);
+			
 			var root = rootVisualElement;
 			VisualElement padding = new VisualElement
 			{
@@ -60,7 +63,8 @@ namespace Vertx.Editors.Editor
 
 			typeLabel = new Label
 			{
-				style = {unityFontStyleAndWeight = FontStyle.Bold}
+				style = {unityFontStyleAndWeight = FontStyle.Bold},
+				text = SearchingType?.Name ?? string.Empty
 			};
 			root.Add(typeLabel);
 
@@ -74,6 +78,11 @@ namespace Vertx.Editors.Editor
 				ReSearch((SearchType) evt.newValue);
 			});
 			root.Add(queryTypeField);
+			Button searchSceneButton = new Button(() => { EditorUtils.SetSceneViewHierarchySearch($"t:{SearchingType.Name}"); })
+			{
+				text = "Search Scene Hierarchy"
+			};
+			root.Add(searchSceneButton);
 
 			listView = new ListView(results,
 				(int) EditorGUIUtils.HeightWithSpacing,

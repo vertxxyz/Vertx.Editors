@@ -131,24 +131,32 @@ namespace Vertx.Editors.Editor
 					GenericMenu menu = new GenericMenu();
 					for (var i = 0; i < searchForMoreContent.Count; i++)
 					{
-						int iLocal = i;
 						GUIContent content = searchForMoreContent[i];
-						menu.AddItem(content, false, () =>
+						Type localType = moreContentTypeNames[i];
+						if (localType.IsGenericType)
 						{
-							switch (scriptType)
+							//If someone knows how to support generics in type searches I would love to know!
+							menu.AddDisabledItem(content);
+						}
+						else
+						{
+							menu.AddItem(content, false, () =>
 							{
-								case ScriptType.Other:
-									break;
-								case ScriptType.ScriptableObject:
-									EditorUtils.SetProjectBrowserSearch($"t:{moreContentTypeNames[iLocal].Name}");
-									break;
-								case ScriptType.MonoBehaviour:
-									PrefabSearchWindow.Open(moreContentTypeNames[iLocal]);
-									break;
-								default:
-									throw new ArgumentOutOfRangeException(nameof(scriptType), scriptType, null);
-							}
-						});
+								switch (scriptType)
+								{
+									case ScriptType.Other:
+										break;
+									case ScriptType.ScriptableObject:
+										EditorUtils.SetProjectBrowserSearch($"t:{localType.Name}");
+										break;
+									case ScriptType.MonoBehaviour:
+										PrefabSearchWindow.Open(localType);
+										break;
+									default:
+										throw new ArgumentOutOfRangeException(nameof(scriptType), scriptType, null);
+								}
+							});
+						}
 					}
 
 					searchPositionWhole.yMax += 3;
