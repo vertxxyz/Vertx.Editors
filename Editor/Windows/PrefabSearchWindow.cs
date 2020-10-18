@@ -33,7 +33,11 @@ namespace Vertx.Editors.Editor
 
 		private ListView listView;
 		private Label typeLabel;
+#if UNITY_2020_1_OR_NEWER
+		private UnityEngine.UIElements.HelpBox helpBox;
+#else
 		private HelpBox helpBox;
+#endif
 		private EnumField queryTypeField;
 		[SerializeField] private List<Component> results = new List<Component>();
 		[SerializeField] private GameObject[] prefabs;
@@ -112,7 +116,11 @@ namespace Vertx.Editors.Editor
 					marginTop = 5
 				}
 			};
-			root.Add(helpBox = new HelpBox("No Results", HelpBoxMessageType.Info)
+#if UNITY_2020_1_OR_NEWER
+			root.Add(helpBox = new UnityEngine.UIElements.HelpBox("No Results", HelpBoxMessageType.Info)
+#else
+			root.Add(helpBox = new HelpBox("No Results", HelpBox.MessageType.Info)
+#endif
 			{
 				style =
 				{
