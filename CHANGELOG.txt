@@ -4,6 +4,9 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2020-11-06
+ - Moved StyleUtils and HelpBox to the Vertx.Utilities package. This also changes their namespace.
+
 ## [1.1.2] - 2020-10-19
  - Fixed compatibility with 2019
 
