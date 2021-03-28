@@ -10,5 +10,7 @@
   },
   "keywords": [],
   "category": "Tools",
-  "dependencies": {}
+  "dependencies": {
+    "com.vertx.utilities": "2.4.1"
+  }
 }
