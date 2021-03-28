@@ -55,10 +55,10 @@ You can also add it directly from GitHub on Unity 2019.4+. Note that you won't b
 - open Package Manager
 - click <kbd>+</kbd>
 - select <kbd>Add from Git URL</kbd>
-- paste `https://github.com/vertxxyz/editors.git`
+- paste `https://github.com/vertxxyz/Vertx.Editors.git`
 - click <kbd>Add</kbd>  
   **or**
-- Edit your `manifest.json` file to contain `"com.vertx.editors": "https://github.com/vertxxyz/editors.git"`,
+- Edit your `manifest.json` file to contain `"com.vertx.editors": "https://github.com/vertxxyz/Vertx.Editors.git"`,
 
 ⚠️ Editors has a dependency on [Utilities](https://github.com/vertxxyz/Vertx.Utilities) so ensure that is referenced into your project to use this package successfully. ⚠️  
 
