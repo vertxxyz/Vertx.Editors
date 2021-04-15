@@ -14,6 +14,8 @@ namespace Vertx.Editors.Editor
 		private List<GUIContent> searchForMoreContent;
 		private List<Type> moreContentTypes;
 
+		protected override bool ShouldHideOpenButton() => true;
+
 		protected virtual void OnEnable()
 		{
 			type = target.GetType();
@@ -53,7 +55,7 @@ namespace Vertx.Editors.Editor
 			position.y = position.yMax - 26;
 			position.height = 15;
 			position.xMin += 46;
-			position.xMax -= 55;
+			position.xMax -= 5;
 
 			Rect selectPosition = position;
 			float searchWidth = EditorStyles.miniButton.CalcSize(searchContent).x;
