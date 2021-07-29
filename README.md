@@ -23,6 +23,9 @@ Helper functions for UIToolkit/UIElements.
 ### Prefab Search
 Used by the [Script Inspector](#script-inspector) to search for prefabs containing a certain component.
 
+## Serialized Property
+Adds a Reverse option to array fields.
+
 ## Installation
 
 <details>
