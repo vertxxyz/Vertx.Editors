@@ -162,7 +162,11 @@ namespace Vertx.Editors.Editor
 			QueryType = queryType;
 			results.Clear();
 			ShowHelpBox();
+#if UNITY_2021_2_OR_NEWER
+			listView.Rebuild();
+#else
 			listView.Refresh();
+#endif
 			queryTypeField.SetValueWithoutNotify(QueryType);
 
 			prefabs = EditorUtils.LoadAssetsOfType<GameObject>();
@@ -226,7 +230,11 @@ namespace Vertx.Editors.Editor
 				if (result)
 				{
 					HideHelpBox();
+#if UNITY_2021_2_OR_NEWER
+					listView.Rebuild();
+#else
 					listView.Refresh();
+#endif
 					Repaint();
 				}
 			}
