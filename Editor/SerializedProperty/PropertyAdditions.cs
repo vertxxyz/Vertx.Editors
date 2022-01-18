@@ -23,11 +23,25 @@ namespace Vertx.Editors
 				else
 				{
 					var propertyCopy = property.Copy();
-					menu.AddItem(new GUIContent("Reverse"), false, () =>
+					menu.AddItem(new GUIContent("Reverse"), false, arg =>
 					{
-						propertyCopy.ReverseArray();
-						propertyCopy.serializedObject.ApplyModifiedProperties();
-					});
+						var prop = (SerializedProperty) arg;
+						prop.ReverseArray();
+						prop.serializedObject.ApplyModifiedProperties();
+					}, propertyCopy);
+				}
+				
+				if(property.arraySize == 0)
+					menu.AddDisabledItem(new GUIContent("Clear"));
+				else
+				{
+					var propertyCopy = property.Copy();
+					menu.AddItem(new GUIContent("Clear"), false, arg =>
+					{
+						var prop = (SerializedProperty) arg;
+						prop.arraySize = 0;
+						prop.serializedObject.ApplyModifiedProperties();
+					}, propertyCopy);
 				}
 			}
 

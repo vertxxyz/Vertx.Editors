@@ -24,7 +24,9 @@ Helper functions for UIToolkit/UIElements.
 Used by the [Script Inspector](#script-inspector) to search for prefabs containing a certain component.
 
 ## Serialized Property
-Adds a Reverse option to array fields.
+Adds functionality to the property right-click menu.  
+**Arrays:** Reverse and Clear.  
+**Blend Shapes:** Copy Name and Copy Index.
 
 ## Installation
 
