@@ -65,6 +65,7 @@ namespace Vertx.Editors.Editor
 
 		public override void OnInspectorGUI()
 		{
+			serializedObject.UpdateIfRequiredOrScript();
 			defaultEditor.OnInspectorGUI();
 
 			if (DrawAvatarFoldout(avatar, bones, ref showAvatar))
@@ -72,6 +73,7 @@ namespace Vertx.Editors.Editor
 				if (bones == null || bones.Length == 0)
 					bones = GetBoneArray((Animator) target);
 			}
+			serializedObject.ApplyModifiedProperties();
 		}
 
 		// ReSharper disable once MemberCanBePrivate.Global
