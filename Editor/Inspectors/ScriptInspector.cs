@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Vertx.Editors.Editor
 {
@@ -106,5 +107,7 @@ namespace Vertx.Editors.Editor
 			if(baseMonoScriptInspector != null)
 				baseMonoScriptInspector.OnInspectorGUI();
 		}
+
+		public override VisualElement CreateInspectorGUI() => baseMonoScriptInspector != null ? baseMonoScriptInspector.CreateInspectorGUI() : null;
 	}
 }
