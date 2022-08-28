@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Vertx.Editors.Editor
 {
@@ -20,9 +21,9 @@ namespace Vertx.Editors.Editor
 		{
 			type = target.GetType();
 			InspectorShared.PopulateGUIContent(
-				type, 
+				type,
 				scriptableObjectType,
-				out selectContent, 
+				out selectContent,
 				out searchContent,
 				out searchContentSmall,
 				out searchForMoreContent,
@@ -51,7 +52,7 @@ namespace Vertx.Editors.Editor
 				DragAndDrop.visualMode = DragAndDropVisualMode.Link;
 				DragAndDrop.StartDrag("Drag SO");
 			}
-			
+
 			position.y = position.yMax - 26;
 			position.height = 15;
 			position.xMin += 46;
@@ -62,7 +63,7 @@ namespace Vertx.Editors.Editor
 			if (searchForMoreContent != null)
 				searchWidth += 15;
 			selectPosition.width = Mathf.Min(position.width / 2f, position.width - searchWidth);
-			
+
 			//Selectively use a small version of the search button when the large version forces the Select button to be too small.
 			GUIContent searchContentToUse = searchContent;
 			if (selectPosition.width < 60)
@@ -70,7 +71,7 @@ namespace Vertx.Editors.Editor
 				selectPosition.width = 60;
 				searchContentToUse = searchContentSmall;
 			}
-			
+
 			//Draw the Select button
 			if (GUI.Button(selectPosition, selectContent, EditorStyles.miniButtonLeft))
 			{
@@ -83,5 +84,14 @@ namespace Vertx.Editors.Editor
 		}
 
 		public override void OnInspectorGUI() => DrawDefaultInspector();
+
+#if UNITY_2022_2_OR_NEWER
+		public override VisualElement CreateInspectorGUI()
+		{
+			VisualElement root = new VisualElement();
+			UnityEditor.UIElements.InspectorElement.FillDefaultInspector(root, serializedObject, this);
+			return root;
+		}
+#endif
 	}
 }
