@@ -83,6 +83,12 @@ namespace Vertx.Editors.Editor
 			InspectorShared.DrawSearchButton(position, selectPosition, searchContentToUse, type, searchForMoreContent, moreContentTypes);
 		}
 
+#if UNITY_2022_2_OR_NEWER
+		/// <summary>
+		/// If you are overriding this function, you also need to override <see cref="CreateInspectorGUI"/> and return null.<br/>
+		/// By default <see cref="CreateInspectorGUI"/> is used for the UI as of 2022.2.
+		/// </summary>
+#endif
 		public override void OnInspectorGUI() => DrawDefaultInspector();
 
 #if UNITY_2022_2_OR_NEWER

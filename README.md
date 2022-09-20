@@ -6,18 +6,15 @@ Custom Editors and Controls for Unity
 Adds Select and Search buttons to the header.  
 Custom inspectors for ScriptableObject types should inherit from this type.
 
-### Animator Inspector
-Adds the Avatar bone selection interface to the inspector for humanoid Animators.
-
 ### Script Inspector
 Adds a Search button to the header for ScriptableObject and MonoBehaviour scripts.
 
-## Utilities
-### StyleUtils
-Helper functions for UIToolkit/UIElements.
-- `GetStyleSheet`
-- `GetUXML`
-- `GetStyleSheetAndUXML`
+> **Note**  
+> When overriding these inspectors, as of 2022.2 UIToolkit is the default inspector.  
+> If you use IMGUI, override `CreateInspectorGUI` and return `null`.
+
+### Animator Inspector
+Adds the Avatar bone selection interface to the inspector for humanoid Animators.
 
 ## Windows
 ### Prefab Search
@@ -27,6 +24,11 @@ Used by the [Script Inspector](#script-inspector) to search for prefabs containi
 Adds functionality to the property right-click menu.  
 **Arrays:** Reverse and Clear.  
 **Blend Shapes:** Copy Name and Copy Index.
+
+---
+If you find this resource helpful:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z42ZYHB)
 
 ## Installation
 
