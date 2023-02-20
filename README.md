@@ -6,18 +6,15 @@ Custom Editors and Controls for Unity
 Adds Select and Search buttons to the header.  
 Custom inspectors for ScriptableObject types should inherit from this type.
 
-### Animator Inspector
-Adds the Avatar bone selection interface to the inspector for humanoid Animators.
-
 ### Script Inspector
 Adds a Search button to the header for ScriptableObject and MonoBehaviour scripts.
 
-## Utilities
-### StyleUtils
-Helper functions for UIToolkit/UIElements.
-- `GetStyleSheet`
-- `GetUXML`
-- `GetStyleSheetAndUXML`
+> **Note**  
+> When overriding these inspectors, as of 2022.2 UIToolkit is the default inspector.  
+> If you use IMGUI, override `CreateInspectorGUI` and return `null`.
+
+### Animator Inspector
+Adds the Avatar bone selection interface to the inspector for humanoid Animators.
 
 ## Windows
 ### Prefab Search
@@ -28,44 +25,37 @@ Adds functionality to the property right-click menu.
 **Arrays:** Reverse and Clear.  
 **Blend Shapes:** Copy Name and Copy Index.
 
+## Gizmos
+- Edit/Gizmos/
+  - Disable All Icons
+  - Enable All Icons
+  - Disable Scripts Icons
+
 ## Installation
 
-<details>
-<summary>Add from OpenUPM <em>| via scoped registry, recommended</em></summary>
+[![openupm](https://img.shields.io/npm/v/com.vertx.editors?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.vertx.editors/)
 
-This package is available on OpenUPM: https://openupm.com/packages/com.vertx.editors
+<table><tr><td>
 
-To add it the package to your project:
+#### Add the OpenUPM registry
+1. Open `Edit/Project Settings/Package Manager`
+1. Add a new Scoped Registry (or edit the existing OpenUPM entry):
+   ```
+   Name: OpenUPM
+   URL:  https://package.openupm.com/
+   Scope(s): com.vertx
+   ```
+1. **Save**
 
-- open `Edit/Project Settings/Package Manager`
-- add a new Scoped Registry:
-  ```
-  Name: OpenUPM
-  URL:  https://package.openupm.com/
-  Scope(s): com.vertx
-  ```
-- click <kbd>Save</kbd>
-- open Package Manager
-- click <kbd>+</kbd>
-- select <kbd>Add from Git URL</kbd>
-- paste `com.vertx.editors`
-- click <kbd>Add</kbd>
-</details>
+#### Add the package
+1. Open the Package Manager via `Window/Package Manager`.
+1. Select the <kbd>+</kbd> from the top left of the window.
+1. Select **Add package by Name** or **Add package from Git URL**.
+1. Enter `com.vertx.editors`.
+1. Select **Add**.
 
-<details>
-<summary>Add from GitHub | <em>not recommended, no updates through UPM</em></summary>
+</td></tr></table>
 
-You can also add it directly from GitHub on Unity 2019.4+. Note that you won't be able to receive updates through Package Manager this way, you'll have to update manually.
+If you find this resource helpful:
 
-- open Package Manager
-- click <kbd>+</kbd>
-- select <kbd>Add from Git URL</kbd>
-- paste `https://github.com/vertxxyz/Vertx.Editors.git`
-- click <kbd>Add</kbd>  
-  **or**
-- Edit your `manifest.json` file to contain `"com.vertx.editors": "https://github.com/vertxxyz/Vertx.Editors.git"`,
-
-⚠️ Editors has a dependency on [Utilities](https://github.com/vertxxyz/Vertx.Utilities) so ensure that is referenced into your project to use this package successfully. ⚠️  
-
-To update the package with new changes, remove the lock from the `packages-lock.json` file.
-</details>
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z42ZYHB)

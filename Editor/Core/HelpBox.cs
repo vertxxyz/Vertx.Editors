@@ -6,7 +6,7 @@ using UnityEditor;
 
 namespace Vertx.Editors.Editor
 {
-	public class HelpBox : VisualElement
+	public sealed class HelpBox : VisualElement
 	{
 		public const string uSSClassName = "helpBox";
 		public const string uSSLabelClassName = "helpBoxLabel";

@@ -8,7 +8,7 @@ using Vertx.Utilities.Editor;
 
 namespace Vertx.Editors.Editor
 {
-	public class PrefabSearchWindow : EditorWindow
+	public sealed class PrefabSearchWindow : EditorWindow
 	{
 		public enum SearchType
 		{
