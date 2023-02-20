@@ -4,34 +4,37 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2023-02-20
+- Added Edit/Gizmos menu to mass-disable gizmo icons.
+
 ## [1.3.1] - 2022-08-28
- - Added UIToolkit support for 2022.2+ for ScriptableObjectInspector.
- - Added future-proofed UIToolkit support for ScriptInspector.
- - Added HelpBox fallback for <2020.1.
+- Added UIToolkit support for 2022.2+ for ScriptableObjectInspector.
+- Added future-proofed UIToolkit support for ScriptInspector.
+- Added HelpBox fallback for <2020.1.
 
 ## [1.3.0] - 2021-10-22
- - Added Copy Name and Copy Index to blend shape properties.
- - Added Clear to the SerializedProperty array context menu.
+- Added Copy Name and Copy Index to blend shape properties.
+- Added Clear to the SerializedProperty array context menu.
 
 ## [1.2.2] - 2021-10-22
- - Added support for 2021.1+.
+- Added support for 2021.1+.
 
 ## [1.2.1] - 2021-07-29
- - Added Reverse to the SerializedProperty array context menu.
+- Added Reverse to the SerializedProperty array context menu.
 
 ## [1.2.0] - 2020-11-06
- - Moved StyleUtils and HelpBox to the Vertx.Utilities package. This also changes their namespace.
+- Moved StyleUtils and HelpBox to the Vertx.Utilities package. This also changes their namespace.
 
 ## [1.1.2] - 2020-10-19
- - Fixed compatibility with 2019
+- Fixed compatibility with 2019
 
 ## [1.1.1] - 2020-10-10
- - Added active scene search to prefab search window.
+- Added active scene search to prefab search window.
 
 ## [1.1.0] - 2020-10-03
- - Update to stay inline with Vertx.Utilities changes.
- - StyleExtensions has been renamed to StyleUtils to match other Utility/Extension classes across these packages.
- - Added Select and Search to MonoScript. Added a prefab search window that is used by searches with MonoBehaviour scripts.
+- Update to stay inline with Vertx.Utilities changes.
+- StyleExtensions has been renamed to StyleUtils to match other Utility/Extension classes across these packages.
+- Added Select and Search to MonoScript. Added a prefab search window that is used by searches with MonoBehaviour scripts.
 
 ## [1.0.0]
- - Initial release.
+- Initial release.
