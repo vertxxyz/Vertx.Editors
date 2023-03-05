@@ -1,13 +1,15 @@
 {
   "name": "com.vertx.editors",
   "displayName": "Editors",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "unity": "2019.4",
   "description": "Custom Editors and Controls for Unity.",
   "author": {
     "name": "Vertx",
     "url": "https://github.com/vertxxyz"
   },
+  "changelogUrl": "https://github.com/vertxxyz/Vertx.Editors/blob/master/CHANGELOG.md",
+  "documentationUrl": "https://github.com/vertxxyz/Vertx.Editors",
   "keywords": [],
   "category": "Tools",
   "dependencies": {

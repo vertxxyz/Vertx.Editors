@@ -22,7 +22,10 @@ namespace Vertx.Editors.Editor
 		{
 			baseMonoScriptInspector = CreateEditor(target, Type.GetType("UnityEditor.MonoScriptInspector,UnityEditor"));
 			
-			type = ((MonoScript)target).GetClass();
+			type = target == null // I have found this to sometimes be the case.
+				? null 
+				: ((MonoScript)target).GetClass();
+			
 			if (type == null)
 			{
 				scriptType = InspectorShared.ScriptType.Other;
