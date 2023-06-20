@@ -22,14 +22,32 @@ Used by the [Script Inspector](#script-inspector) to search for prefabs containi
 
 ## Serialized Property
 Adds functionality to the property right-click menu.  
-**Arrays:** Reverse and Clear.  
-**Blend Shapes:** Copy Name and Copy Index.
+### Arrays
+- Reverse
+- Clear  
+### Blend Shapes
+- Copy Name
+- Copy Index
+### LayerMask
+- Edit Layers
+- Edit Layer Collision Matrix
+- Edit Layer Collision Matrix 2D
+
+## Menu Items
+### BoxCollider
+- Resize To Renderers In Children
+### Texture2D
+- Export to PNG
 
 ## Gizmos
 - Edit/Gizmos/
   - Disable All Icons
   - Enable All Icons
   - Disable Scripts Icons
+
+## Shortcuts
+- Clear Console (Ctrl+Alt+Shift+C)
+- Copy GUID and FileID from selected asset (Ctrl+Alt+Shift+I)
 
 ## Installation
 

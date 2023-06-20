@@ -4,6 +4,20 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.5.0]
+- Raised Vertx.Utilities dependency to 4.0.0
+- Added component context menus: 
+  - BoxCollider/Resize To Renderers In Children.
+- Added Serialized Property context menus:
+  - Individual Transform (Position, Rotation, Scale) Resets.
+  - LayerMask
+    - Edit Layers
+    - Edit Layer Collision Matrix (2D)
+  - ObjectField (when empty) Get First Component, also affects empty Component arrays.
+- Fixed issue where Clear and Reverse menu items would unintentionally appear for string fields (Tag field was a surprise).
+- Added Copy GUID and FileID from selected asset shortcut (Ctrl+Alt+Shift+I)
+- Added Export to PNG context menu to Texture2D headers.
+
 ## [1.4.1]
 - Added shortcut to clear the console window (Ctrl+Alt+Shift+C)
 - Fixed rare InvalidCastException.
