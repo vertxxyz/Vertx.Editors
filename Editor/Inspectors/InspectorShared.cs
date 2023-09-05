@@ -59,12 +59,12 @@ namespace Vertx.Editors.Editor
 			out List<Type> moreContentTypes
 		)
 		{
-			Type a = typeof(ScriptableObject);
-			Type b = typeof(MonoBehaviour);
+			Type soType = typeof(ScriptableObject);
+			Type mbType = typeof(MonoBehaviour);
 			searchContent = new GUIContent($"Search for {type.Name}");
 			selectContent = new GUIContent("Select");
 			searchContentSmall = new GUIContent("Search");
-			if (type.BaseType != a && type.BaseType != b)
+			if (type.BaseType != null && type.BaseType != soType && type.BaseType != mbType)
 			{
 				searchForMoreContent = new List<GUIContent>();
 				moreContentTypes = new List<Type>();
@@ -75,7 +75,7 @@ namespace Vertx.Editors.Editor
 					moreContentTypes.Add(type);
 					if (type.BaseType == null)
 						return ScriptType.Other;
-				} while (type.BaseType != a && type.BaseType != b);
+				} while (type.BaseType != soType && type.BaseType != mbType);
 			}
 			else
 			{
@@ -83,7 +83,7 @@ namespace Vertx.Editors.Editor
 				moreContentTypes = null;
 			}
 
-			return type.BaseType == a ? ScriptType.ScriptableObject : ScriptType.MonoBehaviour;
+			return type.BaseType == soType ? ScriptType.ScriptableObject : ScriptType.MonoBehaviour;
 		}
 
 		public static void DrawSearchButton(

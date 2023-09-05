@@ -212,27 +212,40 @@ namespace Vertx.Editors
 				{
 					if (property.objectReferenceValue == null && property.type.StartsWith("PPtr<"))
 					{
-						Scene scene = component.gameObject.scene;
-						EditorUtils.GetFieldInfoFromProperty(property, out Type type);
-						if (type.IsSubclassOf(typeof(Component)))
-						{
-							menu.AddSeparator("");
-							menu.AddItem(new GUIContent("Assign First"), false, () =>
-							{
-								GameObject[] gameObjects = scene.GetRootGameObjects();
-								foreach (GameObject gameObject in gameObjects)
-								{
-									Component result = gameObject.GetComponentInChildren(type, true);
-									if (result == null) continue;
-									property.objectReferenceValue = result;
-									property.serializedObject.ApplyModifiedProperties();
-									return;
-								}
-							});
-						}
+						NullComponentPropertyAdditions(menu, property, component);
 					}
 				}
 			}
+		}
+
+		private static void NullComponentPropertyAdditions(GenericMenu menu, SerializedProperty property, Component component)
+		{
+			Scene scene = component.gameObject.scene;
+			EditorUtils.GetFieldInfoFromProperty(property, out Type type);
+			if (!type.IsSubclassOf(typeof(Component)))
+				return;
+			
+			menu.AddSeparator("");
+			menu.AddItem(new GUIContent("Assign/Find First"), false, () =>
+			{
+				GameObject[] gameObjects = scene.GetRootGameObjects();
+				foreach (GameObject gameObject in gameObjects)
+				{
+					Component result = gameObject.GetComponentInChildren(type, true);
+					if (result == null) continue;
+					property.objectReferenceValue = result;
+					property.serializedObject.ApplyModifiedProperties();
+					return;
+				}
+			});
+
+			menu.AddItem(new GUIContent("Assign/Create Empty"), false, () =>
+			{
+				var gameObject = new GameObject(type.Name, type);
+				Undo.RegisterCreatedObjectUndo(gameObject, "Created Empty");
+				property.objectReferenceValue = gameObject.GetComponent(type);
+				property.serializedObject.ApplyModifiedProperties();
+			});
 		}
 	}
 }

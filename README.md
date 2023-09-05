@@ -32,6 +32,9 @@ Adds functionality to the property right-click menu.
 - Edit Layers
 - Edit Layer Collision Matrix
 - Edit Layer Collision Matrix 2D
+### Object
+- Assign First
+- Create Empty
 
 ## Menu Items
 ### BoxCollider
